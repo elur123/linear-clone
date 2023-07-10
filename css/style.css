@@ -1,0 +1,98 @@
+:root {
+    --gradient-one: radial-gradient(circle at bottom center, #7877C6, transparent 70%);
+    --transparent: rgba(255,255,255,0);
+    --top: #000212;  
+    --bottom: #352a4f;
+}
+
+body {
+    font-family: "Linear","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu, Cantarell,"Open Sans","Helvetica Neue",sans-serif;;
+}
+
+.text-linear-background {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right bottom, rgb(255, 255, 255) 30%, rgba(255, 255, 255, 0.38));
+    -webkit-background-clip: text
+}
+
+.text-radial-background {
+    -webkit-box-decoration-break: clone;
+    -webkit-text-fill-color: transparent;
+    background: radial-gradient(40% 70% at 50% 100%, rgba(255, 255, 255, 0.4), rgb(255, 255, 255));
+    -webkit-background-clip: text
+}
+
+.has-radial-effect {
+    -webkit-mask-image: radial-gradient(100% 50% at center center, black, transparent);
+    background-image: conic-gradient(from 90deg at 80% 50%, var(--top), var(--bottom)), conic-gradient(from 270deg at 20% 50%, var(--bottom), var(--top));
+    background-position-x: 1%, 99%;
+    background-position-y: 0%, 0%;
+    background-size: 50% 100%, 50% 100%;
+    transform-origin: center center;
+    background-repeat: no-repeat;
+}
+
+.has-gradiant-one::before {
+    background: var(--gradient-one);
+}
+
+.has-radial-effect::after {
+    -webkit-mask-image: radial-gradient(140px 50% at 50% 100%, black, transparent);
+}
+
+.has-card-gradiant::before {
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.07));
+    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+}
+
+.has-card-gradiant-issue::before,
+.has-card-gradiant-cycle::before,
+.has-card-gradiant-roadmap::before {
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 120%);
+    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+}
+
+.has-card-gradiant-issue::after {
+    background: radial-gradient(ellipse 50% 50% at center,rgba(194, 97, 254, 0.1), rgba(255, 255, 255, 0));
+}
+
+.has-card-gradiant-cycle::after {
+    background: radial-gradient(ellipse 50% 50% at center,rgba(40,87,255, 0.1), rgba(255, 255, 255, 0));
+}
+
+.has-card-gradiant-roadmap::after {
+    background: radial-gradient(ellipse 50% 50% at center,rgba(0, 225, 224, 0.1), rgba(255, 255, 255, 0));
+}
+
+.has-card-gradiant-workflows::after {
+    background: radial-gradient(ellipse 50% 50% at center,rgba(62,36,118, 0.1), rgba(255, 255, 255, 0));
+}
+
+.has-section-card-gradiant::before {
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+}
+
+.has-section-violet-gradiant::after {
+    background: radial-gradient(ellipse 100% 40% at 50% 60%,rgba(194, 97, 254,0.1),rgba(255, 255, 255, 0));
+}
+
+.has-section-blue-gradiant::after {
+    background: radial-gradient(ellipse 100% 40% at 50% 60%,rgba(140,87,255,0.1),rgba(255, 255, 255, 0));
+}
+
+.has-section-roadmap-gradiant::after {
+    background: radial-gradient(ellipse 100% 40% at 50% 60%,rgba(0, 225, 224,0.1),rgba(255, 255, 255, 0));
+}
+
+.has-section-roadmap-gradiant::after {
+    background: radial-gradient(ellipse 100% 40% at 50% 60%,rgba(62,36,118,0.1),rgba(255, 255, 255, 0));
+}
+
+.has-backdrop::before {
+    backdrop-filter: blur(12px);
+    -webkit-mask-image: linear-gradient(to bottom,black 48px,transparent);
+}
